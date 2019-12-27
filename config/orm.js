@@ -15,7 +15,7 @@ var orm = {
     });
   },
   findRecordCityTempG: function(city, threshold) {
-    var queryString = "SELECT * FROM records WHERE city = ? AND temp > ??";
+    var queryString = "SELECT * FROM records WHERE city = ? AND temp > ?";
     console.log(queryString);
     connection.query(queryString, [city, threshold], function(err, result) {
       if (err) throw err;
@@ -23,22 +23,22 @@ var orm = {
     });
   },
  findRecordCityTempL: function(city, threshold) {
-    var queryString = "SELECT * FROM records WHERE city = ? AND temp < ??";
+    var queryString = "SELECT * FROM records WHERE city = ? AND temp < ?";
     console.log(queryString);
     connection.query(queryString, [city, threshold], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
   },
-  findTempForDateCity: function(date, city) {
-    var queryString = "SELECT temp FROM records WHERE city = ? AND date = ??";
+  findTempForDateCity: function(city, date) {
+    var queryString = "SELECT temp FROM records WHERE city = ? AND dayt = ?";
     console.log(queryString);
     connection.query(queryString, [city, date], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
 },
-findAvgTempCity: function(date, city) {
+findAvgTempCity: function(city) {
     var queryString = "SELECT AVG(temp) FROM records WHERE city = ?";
     console.log(queryString);
     connection.query(queryString, [city], function(err, result) {
