@@ -1,4 +1,4 @@
-ar connection = require("./connection.js");
+var connection = require("./connection.js");
 
 // Object Relational Mapper (ORM)
 
@@ -45,6 +45,7 @@ findAvgTempCity: function(date, city) {
       if (err) throw err;
       console.log(result);
     });
+}
 };
 
 module.exports = orm;
