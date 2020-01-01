@@ -13,6 +13,8 @@ inquirer
     ]).then(function(inquirerResponse) {
     
     switch(inquirerResponse.question){
+    	
+
     	case "findCityLat":
     	inquirer.prompt([
     	{
@@ -24,11 +26,28 @@ inquirer
     		{
     			orm.findCityLat(cityLatResponse.city);
     		});
+    	break;
     	
-    	break;
+
     	case "findRecordCityTempG":
-    	console.log("Performing RecordCityTempG function");
+    	inquirer.prompt([
+    	{
+    		type: "input",
+    		message: "which city",
+    		name: "city"
+    	},
+    	{
+    		type: "input",
+    		message: "which temp",
+    		name: "temp"
+    	}
+    		]).then(function(RCTG)
+    		{
+    			orm.findRecordCityTempG(RCTG.city, RCTG.temp);
+    		});
     	break;
+
+
     	case "findRecordCityTempL":
     	console.log("Performing RecordCityTempL function");
     	break;
