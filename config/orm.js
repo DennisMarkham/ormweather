@@ -11,7 +11,7 @@ var orm = {
     var queryString = "SELECT lat FROM records WHERE city = ?";
     connection.query(queryString, [city], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      console.log(result[0].lat);
     });
   },
   findRecordCityTempG: function(city, threshold) {
